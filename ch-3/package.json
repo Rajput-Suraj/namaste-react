@@ -1,0 +1,33 @@
+{
+  "name": "namaste-react-ch-3",
+  "source": "index.html",
+  "version": "1.0.0",
+  "description": "Trying to built own create-react-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajput-Suraj/namaste-react-ch-2.git"
+  },
+  "author": "Suraj Rajput",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rajput-Suraj/namaste-react-ch-2/issues"
+  },
+  "homepage": "https://github.com/Rajput-Suraj/namaste-react-ch-2#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 2 version"
+  ]
+}

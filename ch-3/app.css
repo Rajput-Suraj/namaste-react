@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 50px;
+}
+
+.header {
+  background-color: tomato;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.profile {
+  width: 35px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-input {
+  outline: none;
+  height: 30px;
+  margin-right: 10px;
+  border: 1px;
+  border-radius: 3px;
+}
+
+.search-btn {
+  height: 30px;
+}
