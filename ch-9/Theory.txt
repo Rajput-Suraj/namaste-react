@@ -1,62 +1,17 @@
-1.  How do you create nested routes react-router-dom configuration
-    - We can create nested routes in react-router-dom using children property inside of any children.
+1.  When and why do we need lazy()?
+    - It allows you to load parts of your application on-demand to reduce the initial load time. For example, you can initially load 
+        the components and modules related to user login and registration. Then, you can load the rest of the components based on 
+        user navigation.
 
-2.  What is the order of life cycle methods calls in class based components.
-    - The order of life cycle methods as follows:
-        - constructor
-        - render
-        - componentDidMount
-        - componentDidUpdate
-        - componentWillUnmount
+2.  What is Suspense?
+    - React 16.6 added a <Suspense> component that lets you “wait” for some code to load and declaratively specify a loading state 
+      (like a spinner) while we’re waiting.
 
-    - If any parent component has two children, it will be then,
-        - Parent constructor
-        - Parent render
-        - First child constructor
-        - First child render
-        - Second child constructor
-        - Second child render
-        - First child componentDidMount
-        - Second child componentDidMount
-        - Parent componentDidMount
+3.  Advantages and disadvantages of using this code splitting pattern?
+    - Advantage: Code splitting is one of the most compelling features of webpack. This feature allows you to split your code into various bundles which can then be loaded on demand or in parallel. It can be used to achieve smaller bundles and control resource load prioritization which, if used correctly, can have a major impact on load time.
+    - Disadvantage: The only drawback about code splitting is that you can only use it in client side rendering.
 
-3.  Why do we use componentDidMount
-    - The componentDidMount() method allows us to execute the React code when the component is already placed in the DOM 
-      (Document Object Model). This method is called during the Mounting phase of the React Life-cycle i.e after the component is rendered.
-
-4.  Why do we use componentWillUnmount? Show with example.
-    - componentWillUnmount() is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in 
-      this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
-
-      Example:
-        class App extends Component{
-          constructor(props){
-            super(props)
-          }
-          
-          componentDidMount(){
-            this.timer = setTimeout(() => {
-              console.log('Timeout Function');
-            }, 2000)
-          }
-
-          componentWillUnmount(){
-            clearTimeout(this.timer);
-          }
-
-          render() {
-            return (
-              <h1>Hello World</h1>
-            )
-          }
-        }
-
-        export default App
-
-5.  why do we use super(props) in constructor.
-    - Super() function calls the constructor of the parent class. Using super constructor with props arguments basically allows 
-      accessing this.props in a Constructor function.
-
-6.  Why can't we have the callback function of useEffect async?
-    - Because React's useEffect hook expects a cleanup function returned from it which is called when the component unmounts. Using an async function \
-      here will cause a bug as the cleanup function will never get called.
+4.  When do we and why do we need suspense?
+    - Suspense is the first feature released by the Facebook React team that takes advantage of the new concurrent rendering engine 
+      built into React 18. It allows you to build apps with more responsive UIs that use less browser resources. It also gives 
+      developers and designers a more intuitive API to work with.
