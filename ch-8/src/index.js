@@ -7,10 +7,12 @@ import './index.css';
 import App from './App';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Profile from './pages/Profile';
 import Error from './components/Error';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Details from './components/Details';
+import AboutClass from './pages/AboutClass';
 import reportWebVitals from './reportWebVitals';
 
 const AppLayout = () => {
@@ -41,9 +43,19 @@ const router = createBrowserRouter([
         path: '/',
         element: <App />,
       },
+      // {
+      //   path: '/about',
+      //   element: <About />,
+      // },
       {
-        path: '/about',
-        element: <About />,
+        path: 'about',
+        element: <AboutClass />,
+        children: [
+          {
+            path: 'profile',
+            element: <Profile />,
+          },
+        ],
       },
       {
         path: '/contact',
