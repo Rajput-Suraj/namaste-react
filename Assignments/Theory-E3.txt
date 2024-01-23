@@ -1,0 +1,26 @@
+1.  What is JSX?
+    JSX is a HTML like syntactical sugar created by facebook engineers to run inside javascript. 
+    Earlier to create react element inside our react app, We need write the api React.createElement provided by react and it makes our code messy and non maintainable. To overcome this, this has been created. 
+    It ultimately returns React.createElement internally using Abstract Syntax Tree. To use this we need babel which is responsible for transpiling the JSX code into React code.
+
+2.  Superpowers of JSX
+    - It is faster than regular JavaScript because it performs optimization while translating the code to JavaScript.
+    - It is type-safe, and most of the errors can be found at compilation time.
+    - It helps writing code easily.
+
+3.  Role of type attribute in script tag? What options can I use there?
+    The type attribute gives the language of the script or format of the data. If the attribute is present, its value must be a valid MIME type.
+    - options 
+        - async
+        - defer
+        - crossorigin
+        - integrity
+
+4.  {TitleComponent}
+      - {TitleComponent} it is a react element which returns an object.
+
+    {<TitleComponent/>}
+      - <TitleComponent/> it is a react component, we call it as a self closing.
+
+    {<TitleComponent></TitleComponent>}
+      - <TitleComponent></TitleComponent> it is also a react component with closing tag.
