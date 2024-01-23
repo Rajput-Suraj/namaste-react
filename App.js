@@ -23,10 +23,39 @@ function Header() {
   );
 }
 
+function RestaurantCard() {
+  return (
+    <div className="res-card">
+      <div className="res-image">
+        <img
+          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4"
+          alt="Restaurant Image"
+        />
+      </div>
+      <div className="res-info">
+        <h3>KFC</h3>
+        <h4>Burgers, Biryani Chinchwad</h4>
+        <h4>Rating 4.5</h4>
+        <h4>Price: 400 for two</h4>
+      </div>
+    </div>
+  );
+}
+
+function Body() {
+  return (
+    <div className="container">
+      <div className="search">Search</div>
+      <RestaurantCard />
+    </div>
+  );
+}
+
 function AppLayout() {
   return (
     <div>
       <Header />
+      <Body />
     </div>
   );
 }
