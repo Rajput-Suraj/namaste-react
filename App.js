@@ -45,7 +45,9 @@ function RestaurantCard() {
 function Body() {
   return (
     <div className="container">
-      <div className="search">Search</div>
+      <div className="search">
+        <input type="text" className="search-input" placeholder="Search for restaurant and food" />
+      </div>
       <RestaurantCard />
     </div>
   );
