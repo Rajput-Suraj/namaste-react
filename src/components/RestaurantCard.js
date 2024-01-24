@@ -1,4 +1,4 @@
-import { CDN_URL } from '../utils/contants';
+import { CDN_URL } from '../utils/constants';
 
 function RestaurantCard({ restaurant }) {
   const { name, cuisines, costForTwo, avgRating, cloudinaryImageId, sla } = restaurant?.info;
