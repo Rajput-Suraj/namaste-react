@@ -5,11 +5,13 @@ function Header() {
   return (
     <div className="header flex">
       <div className="logo-container">
-        <img
-          className="logo"
-          src="https://assets.materialup.com/uploads/81b4aea0-7b9f-47b6-adfc-2524583da17e/preview.png"
-          alt="Logo"
-        />
+        <a href="/">
+          <img
+            className="logo"
+            src="https://assets.materialup.com/uploads/81b4aea0-7b9f-47b6-adfc-2524583da17e/preview.png"
+            alt="Logo"
+          />
+        </a>
       </div>
       <div className="nav-items">
         <ul className="flex">
@@ -48,7 +50,9 @@ function Body() {
       <div className="search">
         <input type="text" className="search-input" placeholder="Search for restaurant and food" />
       </div>
-      <RestaurantCard />
+      <div>
+        <RestaurantCard />
+      </div>
     </div>
   );
 }
