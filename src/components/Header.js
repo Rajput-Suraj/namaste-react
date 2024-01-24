@@ -1,13 +1,11 @@
+import { LOGO_URL } from '../utils/contants';
+
 function Header() {
   return (
     <div className="header flex">
       <div className="logo-container">
         <a href="/">
-          <img
-            className="logo"
-            src="https://assets.materialup.com/uploads/81b4aea0-7b9f-47b6-adfc-2524583da17e/preview.png"
-            alt="Logo"
-          />
+          <img className="logo" src={LOGO_URL} alt="Logo" />
         </a>
       </div>
       <div className="nav-items">
