@@ -10,6 +10,20 @@ body {
   justify-content: space-between;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
+.mtb-20 {
+  margin: 20px 0;
+}
+
 .header {
   height: 80px;
 }
@@ -31,7 +45,7 @@ body {
 }
 
 .search {
-  margin: 20px 0;
+  margin: 20px 0 50px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +61,7 @@ body {
 }
 
 .res-card {
-  width: 250px;
+  width: 280px;
   border-radius: 5px;
   box-shadow: 10px 5px 5px #cecece;
 }
@@ -66,5 +80,6 @@ body {
 
 .res-info {
   padding: 10px;
-  line-height: 0.5;
+  line-height: 1;
+  word-wrap: break-word;
 }
