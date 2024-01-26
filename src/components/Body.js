@@ -1,11 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import RestaurantCard from './RestaurantCard';
-import { restaurantsList } from '../utils/mockData';
 
 function Body() {
+  const [resList, setResList] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [resList, setResList] = useState(restaurantsList);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        'https://www.swiggy.com/api/seo/getListing?lat=18.621055599465002&lng=73.8306423049214'
+      );
+
+      const data = await response.json();
+      setResList(
+        data?.data?.success?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
+    }
+    fetchData();
+  }, []);
 
   const handleSearch = () => {
     if (searchTerm) {
