@@ -28,11 +28,9 @@ function Body() {
     }
   };
 
-  if (resList.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
+  return resList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="container">
       <div className="search">
         <input
