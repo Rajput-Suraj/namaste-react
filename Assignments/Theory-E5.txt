@@ -1,0 +1,23 @@
+1.  What is the difference between Named export, Default export and * as export?
+    -   As the title suggests, named exports use the name of the function or class as their identifier. When you want to import a named 
+        component, you use the same name it was exported with. Names must be imported inside curly brackets. Named exports allow multiple exports in a single file.
+    
+    -   Default exports are created by including a default tag in the export. Usually, you see default exports happen at the bottom of a 
+        file, but it’s possible to define them when your component is declared. When importing a default export, you don’t use curly brackets.
+
+    -   * 
+
+2.  What is the importance of config.js file
+    -   Config file used to store global or constant variable for the app where we can use same variable from the single file to whole app.
+
+3.  What are React Hooks?
+    -   React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component. 
+        Hooks can be stateful and can manage side-effects. React provides a bunch of standard in-built hooks: useState : To manage states. Returns a stateful value and an updater function to update it.
+
+4.  Why do we need a useState hook?
+    -   There are two main reasons why we can’t use just any local variable.
+            -   Local variables don’t persist(retain data) between renders. When React renders a component for the second time, it renders it from scratch. It doesn’t consider any changes to the local variables.
+            -   Changes to local variables won’t trigger renders. React doesn’t realize it needs to render the component again with the new data.
+        The useState Hook provides those two things:
+            -   A state variable to retain the data between renders.
+            -   A state setter function to update the variable and trigger React to render the component again.
