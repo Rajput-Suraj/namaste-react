@@ -60,6 +60,17 @@ body {
   border-radius: 10px;
 }
 
+.search-btn {
+  margin: 0 20px;
+  height: 48px;
+  width: 100px;
+  font-size: 16px;
+  background-color: orangered;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
 .res-card {
   width: 280px;
   border-radius: 5px;
