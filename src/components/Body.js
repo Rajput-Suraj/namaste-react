@@ -6,6 +6,7 @@ import RestaurantCard from './RestaurantCard';
 function Body() {
   const [resList, setResList] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [filterList, setFilterList] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -17,14 +18,19 @@ function Body() {
       setResList(
         data?.data?.success?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       );
+      setFilterList(
+        data?.data?.success?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
     }
     fetchData();
   }, []);
 
   const handleSearch = () => {
     if (searchTerm) {
-      const filteredData = resList?.filter((res) => res.info.name.includes(searchTerm));
-      setResList(filteredData);
+      const filteredData = resList?.filter((res) =>
+        res.info.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilterList(filteredData);
     }
   };
 
@@ -44,11 +50,19 @@ function Body() {
           Search
         </button>
       </div>
-      <div className="grid-container gap-30 mtb-20">
-        {resList.map((restaurant) => (
-          <RestaurantCard key={restaurant?.info?.id} restaurant={restaurant} />
-        ))}
-      </div>
+      {filterList.length === 0 ? (
+        <>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <h1>No result found</h1>
+          </div>
+        </>
+      ) : (
+        <div className="grid-container gap-30 mtb-20">
+          {filterList?.map((restaurant) => (
+            <RestaurantCard key={restaurant?.info?.id} restaurant={restaurant} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

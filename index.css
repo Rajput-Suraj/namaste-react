@@ -69,6 +69,7 @@ body {
   border: none;
   color: #fff;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .res-card {
