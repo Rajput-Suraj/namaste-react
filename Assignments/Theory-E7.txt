@@ -1,0 +1,91 @@
+1.  What are various ways to add images into our App? Explain with code examples.
+    - 4 WAYS TO DISPLAY IMAGES IN REACT JS
+
+      - Use the import keyword.
+          You can import a file right in a JavaScript module. This tells a webpack to include that file in the bundle. 
+          
+          Your code will look like this:
+            
+            import React from 'react';
+            import Car from './Car.png';
+
+            function App(){
+              return (
+                <div>
+                  <img src={car} alt="CAR" />
+                </div>
+              )
+            }
+
+            export default Car;
+
+          This ensures that when the project is built, webpack will move the images into the build folder and provide you with correct
+          paths.
+
+      - Use the require keyword.
+          We can also use the require keyword to load the images into your component. When you do that, your code should look like this:
+
+            import React from 'react';
+
+            function App(){
+              return (
+                <div>
+                  <img src={require('./Car.png)} alt="CAR" />
+                </div>
+              )
+            }
+
+            export default Car;
+
+      - Import SVGs directly as a React component.
+          One way to add scalable vector graphic (SVG) files is described above, but you can also import SVGs directly as React components. 
+          In your code, it would look like this:
+
+            import React from 'react';
+            import {ReactComponent as Logo} from './car.svg';
+
+            function App(){
+              return (
+                <div>
+                  <Logo/>
+                </div>
+              )
+            }
+
+            export default Car;
+
+      - Load images directly from the network.
+          If you are loading images from the network, then it’s a pretty straightforward approach. 
+          In your code, it would look like this:
+
+            import React from 'react';
+
+            function App(){
+              return (
+                <div>
+                  <img src="https://unsplash-car.com' alt="" />
+                </div>
+              )
+            }
+
+            export default Car;
+
+2.  What would happen if we do console.log(useState())?
+    - When we do console.log(useState()), we get an array with two values.
+      - The first array element is undefined if we don't pass any initial value to the state.
+      - The second array element is a setter function that we use to update the state.
+
+3.  How will useEffect behave if we don't add a dependency array ?
+    - When we don't add a dependency array in useEffect, then every time or on every render, useEffect will be called.
+
+4.  What is SPA?
+    - An SPA (Single-page application) is a web app implementation that loads only a single web document, and then updates the body 
+      content of that single document via JavaScript APIs such as Fetch when different content is to be shown.
+
+5.  What is difference between Client Side Routing and Server Side Routing?
+    - In client-side routing involves JavaScript/Libraries handling the routing process internally. In client-side routing, a request to 
+      the server is prevented when a user clicks a link, hence no page refresh even when the URL changes.
+
+    - Server-side routing is the traditional approach to handling routes in web applications. The process involves requesting a new page 
+      from the server and providing it to the user every time a link is clicked. One major issue with server-side routing is that every 
+      request results in a full page refresh, which is not performance efficient in most cases.
