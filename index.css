@@ -4,6 +4,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.padding-container {
+  padding: 30px;
+}
+
 .flex {
   display: flex;
   align-items: center;
