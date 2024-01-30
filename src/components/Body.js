@@ -10,9 +10,7 @@ function Body() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(
-        'https://www.swiggy.com/api/seo/getListing?lat=18.621055599465002&lng=73.8306423049214'
-      );
+      const response = await fetch(process.env.REACT_APP_BASE_URL);
 
       const data = await response.json();
       setResList(
