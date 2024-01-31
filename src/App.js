@@ -7,6 +7,7 @@ import Error from './pages/Error';
 import Body from './components/Body';
 import Contact from './pages/Contact';
 import Header from './components/Header';
+import RestaurantMenu from './pages/RestaurantMenu';
 
 function AppLayout() {
   return (
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/restaurant-menu/:id',
+        element: <RestaurantMenu />,
       },
     ],
     errorElement: <Error />,

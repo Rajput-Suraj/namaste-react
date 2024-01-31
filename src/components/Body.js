@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import Shimmer from './Shimmer';
 import RestaurantCard from './RestaurantCard';
@@ -57,7 +58,9 @@ function Body() {
       ) : (
         <div className="grid-container gap-30 mtb-20">
           {filterList?.map((restaurant) => (
-            <RestaurantCard key={restaurant?.info?.id} restaurant={restaurant} />
+            <Link key={restaurant?.info?.id} to={`/restaurant-menu/${restaurant?.info?.id}`}>
+              <RestaurantCard restaurant={restaurant} />
+            </Link>
           ))}
         </div>
       )}
