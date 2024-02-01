@@ -19,6 +19,10 @@ function RestaurantMenu() {
   const menuList =
     restaurantDetails[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
 
+  if (restaurantDetails?.length === 0) {
+    return <h1 className="padding-container">Loading...</h1>;
+  }
+
   return (
     <div className="padding-container">
       <div className="details">
