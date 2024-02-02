@@ -9,7 +9,7 @@ function RestaurantCard({ restaurant }) {
       </div>
       <div className="res-info">
         <h3>{name}</h3>
-        <h4>{cuisines.join(',')}</h4>
+        <h4 className="wrap-text">{cuisines.join(',')}</h4>
         <h4>{avgRating} Rating</h4>
         <h4>{sla?.slaString}</h4>
         <h4>{costForTwo}</h4>
