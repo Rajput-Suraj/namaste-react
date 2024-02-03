@@ -1,0 +1,62 @@
+1.  How do you create nested routes react-router-dom configuration
+    - We can create nested routes in react-router-dom using children property inside of any children.
+
+2.  What is the order of life cycle methods calls in class based components.
+    - The order of life cycle methods as follows:
+        - constructor
+        - render
+        - componentDidMount
+        - componentDidUpdate
+        - componentWillUnmount
+
+    - If any parent component has two children, it will be then,
+        - Parent constructor
+        - Parent render
+        - First child constructor
+        - First child render
+        - Second child constructor
+        - Second child render
+        - First child componentDidMount
+        - Second child componentDidMount
+        - Parent componentDidMount
+
+3.  Why do we use componentDidMount
+    - The componentDidMount() method allows us to execute the React code when the component is already placed in the DOM 
+      (Document Object Model). This method is called during the Mounting phase of the React Life-cycle i.e after the component is rendered.
+
+4.  Why do we use componentWillUnmount? Show with example.
+    - componentWillUnmount() is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in 
+      this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
+
+      Example:
+        class App extends Component{
+          constructor(props){
+            super(props)
+          }
+          
+          componentDidMount(){
+            this.timer = setTimeout(() => {
+              console.log('Timeout Function');
+            }, 2000)
+          }
+
+          componentWillUnmount(){
+            clearTimeout(this.timer);
+          }
+
+          render() {
+            return (
+              <h1>Hello World</h1>
+            )
+          }
+        }
+
+        export default App
+
+5.  why do we use super(props) in constructor.
+    - Super() function calls the constructor of the parent class. Using super constructor with props arguments basically allows 
+      accessing this.props in a Constructor function.
+
+6.  Why can't we have the callback function of useEffect async?
+    - Because React's useEffect hook expects a cleanup function returned from it which is called when the component unmounts. Using an async function \
+      here will cause a bug as the cleanup function will never get called.
