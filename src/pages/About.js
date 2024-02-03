@@ -1,12 +1,19 @@
-import User from '../components/User';
+import { Component } from 'react';
 
-function About() {
-  return (
-    <div className="padding-container">
-      <h1>About Page</h1>
-      <User name="John Doe" />
-    </div>
-  );
+import User from '../components/User';
+class About extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="padding-container">
+        <h1>About Page</h1>
+        <User name="John Doe" />
+      </div>
+    );
+  }
 }
 
 export default About;
