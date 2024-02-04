@@ -6,19 +6,22 @@ class User extends Component {
     this.state = {
       count: 0,
     };
-
-    console.log('Child Constructor');
   }
 
   componentDidMount() {
-    console.log('Child ComponentDidMount');
+    this.timer = setInterval(() => {
+      console.log('NAMASTE REACT');
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
   }
 
   render() {
     const { count } = this.state;
     const { name } = this.props;
 
-    console.log('Child Render');
     return (
       <div>
         <h2>Count: {count}</h2>
