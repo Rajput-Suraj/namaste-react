@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import useRestaurantMenu from '../hooks/useRestaurantMenu';
 
 function RestaurantMenu() {
   const { id } = useParams();
-  const [restaurantDetails, setRestaurantDetails] = useState([]);
-
-  useEffect(() => {
-    async function getRestaurantMenu() {
-      const response = await fetch(`${process.env.REACT_APP_MENU_URL}${id}`);
-
-      const data = await response.json();
-      setRestaurantDetails(data?.data?.cards);
-    }
-
-    getRestaurantMenu();
-  }, []);
+  const restaurantDetails = useRestaurantMenu(id);
 
   const menuList =
     restaurantDetails[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
