@@ -1,28 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Shimmer from './Shimmer';
 import RestaurantCard from './RestaurantCard';
+import useRestaurantsList from '../hooks/useRestaurantsList';
 
 function Body() {
-  const [resList, setResList] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterList, setFilterList] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(process.env.REACT_APP_BASE_URL);
-
-      const data = await response.json();
-      setResList(
-        data?.data?.success?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
-      setFilterList(
-        data?.data?.success?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
-    }
-    fetchData();
-  }, []);
+  const { resList, filterList } = useRestaurantsList();
 
   const handleSearch = () => {
     if (searchTerm) {
