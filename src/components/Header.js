@@ -4,26 +4,26 @@ import { LOGO_URL } from '../utils/constants';
 
 function Header() {
   return (
-    <div className="header flex">
-      <div className="logo-container">
+    <div className="flex items-center justify-between">
+      <div className="">
         <a href="/">
-          <img className="logo" src={LOGO_URL} alt="Logo" />
+          <img className="w-40" src={LOGO_URL} alt="Logo" />
         </a>
       </div>
-      <div className="nav-items">
-        <ul className="flex">
-          <li>
+      <>
+        <ul className="flex items-center p-4">
+          <li className="px-4">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Cart</li>
+          <li className="px-4">Cart</li>
         </ul>
-      </div>
+      </>
     </div>
   );
 }
