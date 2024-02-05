@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { LOGO_URL } from '../utils/constants';
 
@@ -13,13 +13,28 @@ function Header() {
       <>
         <ul className="flex items-center p-4">
           <li className="px-4">
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? 'underline decoration-orange-500' : '')}
+            >
+              Home
+            </NavLink>
           </li>
           <li className="px-4">
-            <Link to="/about">About Us</Link>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? 'underline decoration-orange-500' : '')}
+            >
+              About Us
+            </NavLink>
           </li>
           <li className="px-4">
-            <Link to="/contact">Contact Us</Link>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? 'underline decoration-orange-500' : '')}
+            >
+              Contact Us
+            </NavLink>
           </li>
           <li className="px-4">Cart</li>
         </ul>

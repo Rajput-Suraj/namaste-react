@@ -7,7 +7,7 @@ import useRestaurantsList from '../hooks/useRestaurantsList';
 
 function Body() {
   const [searchTerm, setSearchTerm] = useState('');
-  const { resList, filterList } = useRestaurantsList();
+  const { resList, filterList, setFilterList } = useRestaurantsList();
 
   const handleSearch = () => {
     if (searchTerm) {
@@ -31,7 +31,7 @@ function Body() {
           placeholder="Search for restaurant and food"
         />
         <button
-          className="bg-orange-500 p-1 rounded-sm text-slate-100 h-9 w-14 text-base"
+          className="bg-orange-500 p-1 rounded-sm text-slate-100 h-9 w-14 text-base leading-[0.3rem]"
           onClick={handleSearch}
         >
           Search
@@ -44,7 +44,7 @@ function Body() {
           </div>
         </>
       ) : (
-        <div className="grid-container gap-30 mtb-20">
+        <div className="flex flex-wrap justify-start mx-[33px]">
           {filterList?.map((restaurant) => (
             <Link key={restaurant?.info?.id} to={`/restaurant-menu/${restaurant?.info?.id}`}>
               <RestaurantCard restaurant={restaurant} />
