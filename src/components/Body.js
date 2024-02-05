@@ -46,7 +46,11 @@ function Body() {
       ) : (
         <div className="flex flex-wrap justify-start mx-[33px]">
           {filterList?.map((restaurant) => (
-            <Link key={restaurant?.info?.id} to={`/restaurant-menu/${restaurant?.info?.id}`}>
+            <Link
+              key={restaurant?.info?.id}
+              to={`/restaurant-menu/${restaurant?.info?.id}`}
+              className="hover:scale-[.85] duration-100"
+            >
               <RestaurantCard restaurant={restaurant} />
             </Link>
           ))}
