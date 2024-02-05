@@ -21,7 +21,7 @@ function Body() {
   return resList.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="mx-[50px]">
+    <div className="mx-[50px] mb-10">
       <div className="flex my-4 items-center justify-center">
         <input
           type="text"
