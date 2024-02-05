@@ -20,7 +20,9 @@ function RestaurantCard({ restaurant }) {
         <h4 className="text-md text-ellipsis whitespace-nowrap overflow-hidden text-neutral-500">
           {cuisines.join(', ')}
         </h4>
-        <h6 className="text-neutral-500 text-sm">{areaName}</h6>
+        <h6 className="text-neutral-500 text-sm text-ellipsis whitespace-nowrap overflow-hidden">
+          {areaName}
+        </h6>
       </div>
     </div>
   );
