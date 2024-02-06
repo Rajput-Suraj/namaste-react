@@ -6,6 +6,7 @@ function RestaurantMenu() {
   const { id } = useParams();
   const restaurantDetails = useRestaurantMenu(id);
 
+  const { name, cuisines, areaName } = restaurantDetails[0]?.card?.card?.info;
   const menuList =
     restaurantDetails[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
 
@@ -14,11 +15,16 @@ function RestaurantMenu() {
   }
 
   return (
-    <div className="padding-container">
+    <div className="mx-56 my-4">
       <div className="details">
-        <h1>{restaurantDetails[0]?.card?.card?.info?.name}</h1>
-        <h2>Menu</h2>
-        <ul>
+        <h1 className="text-2xl font-semibold mb-1">{name}</h1>
+        <div className="mb-4">
+          <div className="text-sm text-neutral-500">{cuisines.join(', ')}</div>
+          <div className="text-sm text-neutral-500">{areaName}</div>
+        </div>
+        <div className="border-b" />
+
+        {/* <ul>
           {menuList?.map((menu) => {
             return (
               <li key={menu?.card?.info?.id}>
@@ -26,7 +32,7 @@ function RestaurantMenu() {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

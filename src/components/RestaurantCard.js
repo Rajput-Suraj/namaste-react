@@ -13,7 +13,9 @@ function RestaurantCard({ restaurant }) {
         />
       </div>
       <div className="px-4 py-3">
-        <h3 className="font-medium text-xl text-neutral-600">{name}</h3>
+        <h3 className="font-medium text-xl text-neutral-600 text-ellipsis whitespace-nowrap overflow-hidden">
+          {name}
+        </h3>
         <h4 className="font-medium text-md text-neutral-600 mx-0">
           ⭐{avgRating} • {sla?.slaString}
         </h4>
