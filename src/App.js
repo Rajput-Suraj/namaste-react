@@ -13,7 +13,9 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="bg-zinc-100 py-8">
+        <Outlet />
+      </div>
     </>
   );
 }

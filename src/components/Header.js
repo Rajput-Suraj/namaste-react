@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom';
 
-import { LOGO_URL } from '../utils/constants';
+import LOGO from '../assets/images/logo.png';
 
 function Header() {
   return (
-    <div className="flex items-center justify-between">
-      <div className="">
+    <div className="flex items-center justify-between h-[80px] shadow-gray-700">
+      <div className="m-2 ml-10">
         <a href="/">
-          <img className="w-48" src={LOGO_URL} alt="Logo" />
+          <img className="w-full h-[60px]" src={LOGO} alt="Logo" />
         </a>
       </div>
       <>

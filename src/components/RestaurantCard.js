@@ -4,7 +4,7 @@ function RestaurantCard({ restaurant }) {
   const { name, cuisines, costForTwo, avgRating, cloudinaryImageId, sla, areaName } =
     restaurant?.info;
   return (
-    <div className="w-[250px] m-3 rounded-md bg-gray-100">
+    <div className="w-[250px] m-3 rounded-md bg-white">
       <div className="w-full h-[200px]">
         <img
           src={CDN_URL + cloudinaryImageId}
