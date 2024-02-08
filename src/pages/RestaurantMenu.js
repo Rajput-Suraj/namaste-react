@@ -5,10 +5,12 @@ import useRestaurantMenu from '../hooks/useRestaurantMenu';
 function RestaurantMenu() {
   const { id } = useParams();
   const { loading, restaurantDetails } = useRestaurantMenu(id);
+
+  let menuList = {};
   let restaurantData = {};
 
   if (restaurantDetails.length > 0) {
-    // const menuList = restaurantDetails[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
+    menuList = restaurantDetails[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
     restaurantData = restaurantDetails[0]?.card?.card?.info;
   }
 
@@ -29,7 +31,7 @@ function RestaurantMenu() {
               <div className="text-sm text-neutral-500">{restaurantData?.areaName}</div>
             </div>
           </div>
-          <div className="rating-box flex flex-col border-solid border-[1px] rounded-md p-3 items-center">
+          <div className="rating-box flex flex-col border-solid border-[1px] rounded-md p-3 items-center bg-white">
             <div className="mb-1">
               <span className="text-green-500 font-bold">⭐ {restaurantData?.avgRatingString}</span>
             </div>
@@ -42,18 +44,27 @@ function RestaurantMenu() {
           </div>
         </div>
         <div className="border-b" />
-        <div className="mt-3 flex items-center">
-          <span className="font-bold text-neutral-600">{restaurantData?.costForTwoMessage}</span>
+        <div className="my-3 flex items-center">
+          <span className="font-bold text-neutral-600 text-md">
+            {restaurantData?.costForTwoMessage}
+          </span>
         </div>
-        {/* <ul>
-          {menuList?.map((menu) => {
+        <div className="border-t-[1px] border-solid" />
+        <div className="my-4">
+          <h2 className="font-bold text-neutral-900 text-xl mb-3">
+            {menuList?.title} ({menuList?.itemCards?.length})
+          </h2>
+          {menuList?.itemCards?.map((menu) => {
+            const { id, name, price } = menu?.card?.info;
+
             return (
-              <li key={menu?.card?.info?.id}>
-                {menu?.card?.info?.name} - Rs.{menu?.card?.info?.price / 100}
-              </li>
+              <div key={id} className="my-16   border-solid border-b-[1px]">
+                <div className="text-lg text-neutral-600 font-medium">{name}</div>
+                <div className="text-neutral-600 font-normal mb-16">₹ {price / 100}</div>
+              </div>
             );
           })}
-        </ul> */}
+        </div>
       </div>
     </div>
   );

@@ -8,16 +8,6 @@ class User extends Component {
     };
   }
 
-  componentDidMount() {
-    this.timer = setInterval(() => {
-      console.log('NAMASTE REACT');
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
   render() {
     const { count } = this.state;
     const { name } = this.props;
