@@ -1,8 +1,7 @@
 import { CDN_URL } from '../utils/constants';
 
 function RestaurantCard({ restaurant }) {
-  const { name, cuisines, costForTwo, avgRating, cloudinaryImageId, sla, areaName } =
-    restaurant?.info;
+  const { name, cuisines, avgRating, cloudinaryImageId, sla, areaName } = restaurant?.info;
   return (
     <div className="w-[250px] m-3 rounded-md bg-white">
       <div className="w-full h-[200px]">

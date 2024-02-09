@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+
+import { CDN_URL } from '../utils/constants';
 import useRestaurantMenu from '../hooks/useRestaurantMenu';
 
 function RestaurantMenu() {
@@ -55,12 +57,24 @@ function RestaurantMenu() {
             {menuList?.title} ({menuList?.itemCards?.length})
           </h2>
           {menuList?.itemCards?.map((menu) => {
-            const { id, name, price } = menu?.card?.info;
+            const { id, name, price, imageId } = menu?.card?.info;
 
             return (
-              <div key={id} className="my-16   border-solid border-b-[1px]">
-                <div className="text-lg text-neutral-600 font-medium">{name}</div>
-                <div className="text-neutral-600 font-normal mb-16">₹ {price / 100}</div>
+              <div
+                key={id}
+                className="flex items-start justify-between my-16 border-solid border-b-[1px] pb-[30px]"
+              >
+                <div>
+                  <div className="text-lg text-neutral-600 font-medium">{name}</div>
+                  <div className="text-neutral-600 font-normal mb-16">₹ {price / 100}</div>
+                </div>
+                <div>
+                  <img
+                    className="w-[120px] h-[120px] rounded-md"
+                    src={CDN_URL + imageId}
+                    alt="img"
+                  />
+                </div>
               </div>
             );
           })}
