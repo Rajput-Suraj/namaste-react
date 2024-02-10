@@ -1,0 +1,30 @@
+1.  Explore all the ways of writing css.
+    - There are differernt ways of ussing CSS.
+
+      Writing normal Nativice CSS : By creating .css files and adding them to our html files
+      By using css preprocessors like sass or scss.
+      By writing inline CSS : writing csss inside the components itself.
+      Using Librraries like Chakra UI, Tailwind CSS etc.
+
+2.  How do we configure tailwind?
+    - For configuring the Tailwind CSS with Parcel.
+      - we need to install tailwind library.
+          npm install -D tailwindcss postcss
+
+      - Then we need to setup the config file for tailwing.
+          npx tailwindcss init
+
+      - This will create a tailwind.config.js file.
+
+3.  In tailwind.config.js, what does all the keys mean (content, theme, extend, plugins)?
+    - The tailwind.config.js file contains the configurations for the our application. Following are the configurations 
+      we require to setup tailwind.
+
+      content : This configuration of the file formats, on which the styles are applied.
+      theme : Theme is where we design our own custom configurations for our project like colors and font-families for our application.
+      extend : Here we can extend more properties for Tailwind like adding values that does not exist for tailwind or overriding the existing the values for tailwind.
+      plugins: We can use to inject new style in our project using JavaScript instaed of css.
+
+4.  Why do we have .postcssrc file?
+    - PostCSS is a JavaScript tool that transforms your CSS code into an abstract syntax tree (AST) and then provides an API (application programming interface) for analyzing and 
+      modifying it using JavaScript plugins.
