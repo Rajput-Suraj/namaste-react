@@ -70,7 +70,7 @@ function RestaurantMenu() {
                 </div>
                 <div>
                   <img
-                    className="w-[120px] h-[120px] rounded-md"
+                    className="w-[120px] h-[120px] rounded-md bg-white"
                     src={CDN_URL + imageId}
                     alt="img"
                   />
