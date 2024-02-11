@@ -68,12 +68,15 @@ function RestaurantMenu() {
                   <div className="text-lg text-neutral-600 font-medium">{name}</div>
                   <div className="text-neutral-600 font-normal mb-16">₹ {price / 100}</div>
                 </div>
-                <div>
+                <div className="relative">
                   <img
-                    className="w-[120px] h-[120px] rounded-md bg-white"
+                    className="w-[120px] h-[120px] rounded-md bg-neutral-300"
                     src={CDN_URL + imageId}
                     alt="img"
                   />
+                  <button className="bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]">
+                    ADD
+                  </button>
                 </div>
               </div>
             );
