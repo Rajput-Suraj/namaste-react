@@ -57,18 +57,19 @@ function RestaurantMenu() {
             {menuList?.title} ({menuList?.itemCards?.length})
           </h2>
           {menuList?.itemCards?.map((menu) => {
-            const { id, name, price, imageId } = menu?.card?.info;
+            const { id, name, price, imageId, description } = menu?.card?.info;
 
             return (
               <div
                 key={id}
                 className="flex items-start justify-between my-16 border-solid border-b-[1px] pb-[30px]"
               >
-                <div>
+                <div className="info w-[70%]">
                   <div className="text-lg text-neutral-600 font-medium">{name}</div>
-                  <div className="text-neutral-600 font-normal mb-16">₹ {price / 100}</div>
+                  <div className="text-neutral-600 font-normal mb-3">₹ {price / 100}</div>
+                  <div className="text-neutral-400 text-sm">{description}</div>
                 </div>
-                <div className="relative">
+                <div className="image-container relative">
                   <img
                     className="w-[120px] h-[120px] rounded-md bg-neutral-300"
                     src={CDN_URL + imageId}
