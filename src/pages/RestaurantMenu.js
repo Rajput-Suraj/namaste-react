@@ -1,4 +1,5 @@
 import React from 'react';
+import { Oval } from 'react-loader-spinner';
 import { useParams } from 'react-router-dom';
 
 import { CDN_URL } from '../utils/constants';
@@ -19,7 +20,20 @@ function RestaurantMenu() {
   console.log(restaurantDetails);
 
   if (loading) {
-    return <h1 className="padding-container">Loading...</h1>;
+    return (
+      <div className="padding-container h-screen flex items-center justify-center">
+        <Oval
+          visible={true}
+          height="80"
+          width="80"
+          color="#f97516"
+          secondaryColor="#f97516"
+          ariaLabel="oval-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
   }
 
   return (
