@@ -1,6 +1,4 @@
 import { Component } from 'react';
-
-import User from '../components/User';
 class About extends Component {
   constructor(props) {
     super(props);
@@ -8,9 +6,8 @@ class About extends Component {
 
   render() {
     return (
-      <div className="padding-container">
+      <div className="mx-[50px]">
         <h1>About Page</h1>
-        <User name="John Doe" />
       </div>
     );
   }

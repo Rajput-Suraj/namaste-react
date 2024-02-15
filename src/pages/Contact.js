@@ -1,6 +1,6 @@
 function Contact() {
   return (
-    <div className="padding-container">
+    <div className="mx-[50px]">
       <h1>Contact Page</h1>
     </div>
   );
