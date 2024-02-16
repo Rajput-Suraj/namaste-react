@@ -20,6 +20,13 @@ function Body() {
 
   return resList.length === 0 ? (
     <>
+      <div className="rounded-md p-4 max-w-sm w-64 mx-auto">
+        <div className="animate-pulse flex space-x-4"></div>
+        <div class="flex py-1 items-center gap-3">
+          <div class="rounded-md bg-slate-300 h-10 w-full"></div>
+          <div class="h-10 bg-slate-300 rounded w-[80px]"></div>
+        </div>
+      </div>
       <div className="grid grid-cols-3 gap-7">
         {Array.from({ length: 10 }, (_, i) => (
           <Shimmer key={`index-${i}`} />
