@@ -1,4 +1,5 @@
 import { CDN_URL } from '../utils/constants';
+import RatingIcon from '../assets/images/star.png';
 
 function RestaurantCard({ restaurant }) {
   const { name, cuisines, avgRating, cloudinaryImageId, sla, areaName } = restaurant?.info;
@@ -16,7 +17,12 @@ function RestaurantCard({ restaurant }) {
           {name}
         </h3>
         <h4 className="font-medium text-md text-neutral-600 mx-0">
-          ⭐{avgRating} • {sla?.slaString}
+          <div className="flex items-center gap-1 my-1">
+            <img src={RatingIcon} alt="Rating" className="w-4 h-4" />
+            <span>
+              {avgRating} • {sla?.slaString}
+            </span>
+          </div>
         </h4>
         <h4 className="text-md text-ellipsis whitespace-nowrap overflow-hidden text-neutral-500">
           {cuisines.join(', ')}
