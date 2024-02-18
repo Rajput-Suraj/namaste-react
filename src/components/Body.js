@@ -22,9 +22,9 @@ function Body() {
     <>
       <div className="rounded-md p-4 max-w-sm w-64 mx-auto">
         <div className="animate-pulse flex space-x-4"></div>
-        <div class="flex py-1 items-center gap-3">
-          <div class="rounded-md bg-slate-300 h-10 w-full"></div>
-          <div class="h-10 bg-slate-300 rounded w-[80px]"></div>
+        <div className="flex py-1 items-center gap-3">
+          <div className="rounded-md bg-slate-300 h-10 w-full"></div>
+          <div className="h-10 bg-slate-300 rounded w-[80px]"></div>
         </div>
       </div>
       <div className="grid grid-cols-3 gap-7">
