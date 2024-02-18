@@ -5,6 +5,7 @@ import { CDN_URL } from '../utils/constants';
 
 import Loader from '../components/Loader';
 import useRestaurantMenu from '../hooks/useRestaurantMenu';
+import RatingIcon from '../assets/images/star.png';
 
 function RestaurantMenu() {
   const { id } = useParams();
@@ -37,7 +38,12 @@ function RestaurantMenu() {
           </div>
           <div className="rating-box flex flex-col border-solid border-[1px] rounded-md p-3 items-center bg-white">
             <div className="mb-1">
-              <span className="text-green-500 font-bold">⭐ {restaurantData?.avgRatingString}</span>
+              <span className="text-green-500 font-bold">
+                <div className="flex items-center gap-1 my-1">
+                  <img src={RatingIcon} alt="Rating" className="w-4 h-4" />
+                  <span>{restaurantData?.avgRatingString}</span>
+                </div>
+              </span>
             </div>
             <div>
               <div className="border-b" />
