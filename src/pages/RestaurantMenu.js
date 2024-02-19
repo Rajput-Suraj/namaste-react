@@ -19,7 +19,12 @@ function RestaurantMenu() {
     restaurantData = restaurantDetails[0]?.card?.card?.info;
   }
 
-  console.log(restaurantDetails);
+  const CARDS = restaurantDetails[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+
+  const filteredCards = CARDS?.filter(
+    (card) =>
+      card?.card?.card?.['@type'] === 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+  );
 
   if (loading) {
     return <Loader />;
