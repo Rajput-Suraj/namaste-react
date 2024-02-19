@@ -13,7 +13,7 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <div className="bg-zinc-100 py-8">
+      <div className="py-8">
         <Outlet />
       </div>
     </>

@@ -4,7 +4,7 @@ import RatingIcon from '../assets/images/star.png';
 function RestaurantCard({ restaurant }) {
   const { name, cuisines, avgRating, cloudinaryImageId, sla, areaName } = restaurant?.info;
   return (
-    <div className="w-[250px] m-3 rounded-md bg-white">
+    <div className="w-[250px] m-3 rounded-md bg-slate-50">
       <div className="w-full h-[200px]">
         <img
           src={CDN_URL + cloudinaryImageId}
