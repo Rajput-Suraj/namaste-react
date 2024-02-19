@@ -1,11 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { CDN_URL } from '../utils/constants';
-
 import Loader from '../components/Loader';
-import useRestaurantMenu from '../hooks/useRestaurantMenu';
+import Category from '../components/Category';
 import RatingIcon from '../assets/images/star.png';
+import useRestaurantMenu from '../hooks/useRestaurantMenu';
 
 function RestaurantMenu() {
   const { id } = useParams();
@@ -65,37 +64,9 @@ function RestaurantMenu() {
           </span>
         </div>
         <div className="border-t-[1px] border-solid" />
-        <div className="my-4">
-          <h2 className="font-bold text-neutral-900 text-xl mb-3">
-            {menuList?.title} ({menuList?.itemCards?.length})
-          </h2>
-          {menuList?.itemCards?.map((menu) => {
-            const { id, name, price, imageId, description } = menu?.card?.info;
-
-            return (
-              <div
-                key={id}
-                className="flex items-start justify-between my-16 border-solid border-b-[1px] pb-[30px]"
-              >
-                <div className="info w-[70%]">
-                  <div className="text-lg text-neutral-600 font-medium">{name}</div>
-                  <div className="text-neutral-600 font-normal mb-3">₹ {price / 100}</div>
-                  <div className="text-neutral-400 text-sm">{description}</div>
-                </div>
-                <div className="image-container relative">
-                  <img
-                    className="w-[120px] h-[120px] rounded-md bg-neutral-300"
-                    src={CDN_URL + imageId}
-                    alt="img"
-                  />
-                  <button className="bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]">
-                    ADD
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {filteredCards?.map((card) => {
+          return <Category key={card?.card?.title} data={card?.card?.card} />;
+        })}
       </div>
     </div>
   );
