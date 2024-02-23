@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -8,15 +8,17 @@ import Body from './components/Body';
 import Contact from './pages/Contact';
 import Header from './components/Header';
 import RestaurantMenu from './pages/RestaurantMenu';
+import { UserContext } from './utils/userContext';
 
 function AppLayout() {
+  const data = useContext(UserContext);
   return (
-    <>
+    <UserContext.Provider value={data}>
       <Header />
       <div className="py-8">
         <Outlet />
       </div>
-    </>
+    </UserContext.Provider>
   );
 }
 
