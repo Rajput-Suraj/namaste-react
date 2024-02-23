@@ -27,7 +27,7 @@ function Body() {
           <div className="h-10 bg-slate-300 rounded w-[80px]"></div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-7">
+      <div className="grid sm:grid-cols-3 gap-7">
         {Array.from({ length: 10 }, (_, i) => (
           <Shimmer key={`index-${i}`} />
         ))}
@@ -57,7 +57,7 @@ function Body() {
           </div>
         </>
       ) : (
-        <div className="flex flex-wrap justify-start mx-[33px]">
+        <div className="grid sm:grid-cols-3 justify-items-center">
           {filterList?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}
