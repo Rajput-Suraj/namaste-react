@@ -29,7 +29,7 @@ function Header() {
               About Us
             </NavLink>
           </li>
-          <li className="px-4">
+          <li className="px-4 sm:block hidden">
             <NavLink
               to="/contact"
               className={({ isActive }) => (isActive ? 'text-orange-500' : '')}
