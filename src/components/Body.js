@@ -35,21 +35,6 @@ function Body() {
     </>
   ) : (
     <div className="mx-[50px] mb-10">
-      <div className="flex my-4 items-center justify-center">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="mx-3 border border-solid border-gray-200 rounded-sm p-1 w-[350px] h-9 text-base"
-          placeholder="Search for restaurant and food"
-        />
-        <button
-          className="bg-orange-500 p-1 rounded-sm text-slate-100 h-9 w-14 text-base leading-[0.3rem]"
-          onClick={handleSearch}
-        >
-          Search
-        </button>
-      </div>
       {filterList.length === 0 ? (
         <>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

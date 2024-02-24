@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { FiSearch } from 'react-icons/fi';
 
 import LOGO from '../assets/images/logo.png';
 
@@ -12,6 +13,12 @@ function Header() {
       </div>
       <>
         <ul className="flex items-center p-4">
+          <li className="px-4">
+            <div className="flex items-center justify-center gap-2">
+              <FiSearch />
+              <span>Search</span>
+            </div>
+          </li>
           <li className="px-4">
             <NavLink to="/" className={({ isActive }) => (isActive ? 'text-orange-500' : '')}>
               Home
