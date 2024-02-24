@@ -24,7 +24,7 @@ function Body() {
         <div className="animate-pulse flex space-x-4"></div>
         <div className="flex py-1 items-center gap-3">
           <div className="rounded-md bg-slate-300 h-10 w-full"></div>
-          <div className="h-10 bg-slate-300 rounded w-[80px]"></div>
+          {/* <div className="h-10 bg-slate-300 rounded w-[80px]"></div> */}
         </div>
       </div>
       <div className="grid sm:grid-cols-3 gap-7">
@@ -34,7 +34,7 @@ function Body() {
       </div>
     </>
   ) : (
-    <div className="mx-[50px] mb-10">
+    <div className="container mx-auto mb-10">
       {filterList.length === 0 ? (
         <>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -42,17 +42,22 @@ function Body() {
           </div>
         </>
       ) : (
-        <div className="grid sm:grid-cols-3 justify-items-center">
-          {filterList?.map((restaurant) => (
-            <Link
-              key={restaurant?.info?.id}
-              to={`/restaurant-menu/${restaurant?.info?.id}`}
-              className="hover:scale-[.85] duration-100"
-            >
-              <RestaurantCard restaurant={restaurant} />
-            </Link>
-          ))}
-        </div>
+        <>
+          <h1 className="text-2xl font-semibold mb-5 text-center">
+            Restaurants with online food delivery
+          </h1>
+          <div className="grid sm:grid-cols-3 justify-items-center">
+            {filterList?.map((restaurant) => (
+              <Link
+                key={restaurant?.info?.id}
+                to={`/restaurant-menu/${restaurant?.info?.id}`}
+                className="hover:scale-[.85] duration-100"
+              >
+                <RestaurantCard restaurant={restaurant} />
+              </Link>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
