@@ -27,7 +27,7 @@ function Body() {
           {/* <div className="h-10 bg-slate-300 rounded w-[80px]"></div> */}
         </div>
       </div>
-      <div className="grid sm:grid-cols-3 gap-7">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-7">
         {Array.from({ length: 10 }, (_, i) => (
           <Shimmer key={`index-${i}`} />
         ))}
@@ -46,7 +46,7 @@ function Body() {
           <h1 className="text-2xl font-semibold mb-5 text-center">
             Restaurants with online food delivery
           </h1>
-          <div className="grid sm:grid-cols-3 justify-items-center">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 justify-items-center">
             {filterList?.map((restaurant) => (
               <Link
                 key={restaurant?.info?.id}
