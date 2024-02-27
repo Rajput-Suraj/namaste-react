@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import About from './pages/About';
@@ -8,17 +9,17 @@ import Body from './components/Body';
 import Contact from './pages/Contact';
 import Header from './components/Header';
 import RestaurantMenu from './pages/RestaurantMenu';
-import { UserContext } from './utils/userContext';
+
+import { store } from './appData/store';
 
 function AppLayout() {
-  const data = useContext(UserContext);
   return (
-    <UserContext.Provider value={data}>
+    <Provider store={store}>
       <Header />
       <div className="py-8">
         <Outlet />
       </div>
-    </UserContext.Provider>
+    </Provider>
   );
 }
 
