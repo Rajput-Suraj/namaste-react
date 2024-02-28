@@ -17,7 +17,7 @@ function RestaurantMenu() {
     restaurantData = restaurantDetails[2]?.card?.card?.info;
   }
 
-  const CARDS = restaurantDetails[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  const CARDS = restaurantDetails[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
   const filteredCards = CARDS?.filter(
     (card) =>
