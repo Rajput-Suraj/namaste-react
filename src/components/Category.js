@@ -1,10 +1,18 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
+import { addToCart } from '../appData/cart';
 import { CDN_URL } from '../utils/constants';
 import DownArrow from '../assets/images/down-arrow.png';
 
 function Category({ data, collapse, handleCollapse }) {
   const { title, itemCards } = data;
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+  };
+
   return (
     <>
       <div className="p-4">
@@ -16,14 +24,16 @@ function Category({ data, collapse, handleCollapse }) {
         </div>
         {collapse &&
           itemCards?.map((menu) => {
-            const { id, name, price, imageId, description } = menu?.card?.info;
+            const { id, name, price, imageId, description, defaultPrice } = menu?.card?.info;
 
             return (
               <React.Fragment key={id}>
                 <div className="flex items-start justify-between my-16 pb-[5px]">
                   <div className="info w-[70%]">
                     <div className="text-lg text-neutral-600 font-medium">{name}</div>
-                    <div className="text-neutral-600 font-normal mb-3">₹ {price / 100}</div>
+                    <div className="text-neutral-600 font-normal mb-3">
+                      ₹ {price ? price / 100 : defaultPrice / 100}
+                    </div>
                     <div className="text-neutral-400 text-sm">{description}</div>
                   </div>
                   <div className="image-container relative">
@@ -32,7 +42,10 @@ function Category({ data, collapse, handleCollapse }) {
                       src={CDN_URL + imageId}
                       alt="img"
                     />
-                    <button className="bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]">
+                    <button
+                      onClick={() => handleAddToCart(menu?.card?.info)}
+                      className="bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]"
+                    >
                       ADD
                     </button>
                   </div>
