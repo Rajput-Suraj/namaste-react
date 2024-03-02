@@ -1,0 +1,66 @@
+1.  useContext vs Redux.
+    - useContext
+        This is a hook provided by React, used to manage global state or pass data across components in React applications. useContext 
+        allows data to be passed through the component tree without the need for prop drilling, typically suitable for managing a 
+        smaller amount of global state in smaller or medium-sized applications.
+
+    - Redux
+        It’s a state management library that provides a single global state store to manage the entire application’s state. 
+        Redux employs the concepts of actions and reducers to update state and can be used in conjunction with React. However, it 
+        requires specific architecture and setup, commonly employed in larger or more complex applications or scenarios requiring 
+        intricate state management.
+        
+2.  Advantage of using Redux Toolkit over Redux.
+    - Redux Toolkit provides several advantages over traditional Redux:
+      - It is easier to set up and requires fewer dependencies.
+      - Reduces boilerplate code by allowing the creation of a single file known as "slice" that combines actions and reducers.
+      - It uses the immer library under the hood, which enables direct state mutation and eliminates the need for manually copying the 
+        state {...state} with every reducer.
+
+3.  Explain Dispatcher.
+    - The Redux store has a method called dispatch. The only way to update the state is to call store.dispatch() and pass in an action 
+      object. The store will run its reducer function and save the new state value inside, and we can call getState() to retrieve the 
+      updated value.
+
+4.  Explain Reducer.
+    - A reducer is a function that receives the current state and an action object, decides how to update the state if necessary, and 
+      returns the new state: (state, action) => newState.
+
+5.  Explain slice.
+    - A function that accepts an initial state, an object of reducer functions, and a "slice name", and automatically generates action 
+      creators and action types that correspond to the reducers and state.
+
+6.  Explain selector.
+    - Selectors are functions that know how to extract specific pieces of information from a store state value. As an application grows 
+      bigger, this can help avoid repeating logic as different parts of the app need to read the same data.
+
+7.  Explain createSlice and the configuration it takes.
+    - A function that accepts an initial state, an object of reducer functions, and a "slice name", and automatically generates action 
+      creators and action types that correspond to the reducers and state.
+
+      This API is the standard approach for writing Redux logic.
+      
+      Internally, it uses createAction and createReducer, so you may also use Immer to write "mutating" immutable updates:
+
+      import { createSlice } from '@reduxjs/toolkit'
+
+      const initialState = { value: 0 }
+
+      const counterSlice = createSlice({
+        name: 'counter',
+        initialState,
+        reducers: {
+          increment(state) {
+            state.value++
+          },
+          decrement(state) {
+            state.value--
+          },
+          incrementByAmount(state, action) {
+            state.value += action.payload
+          },
+        },
+      })
+
+      export const { increment, decrement, incrementByAmount } = counterSlice.actions
+      export default counterSlice.reducer
