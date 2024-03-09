@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
+import { CiMenuBurger } from 'react-icons/ci';
 
 import LOGO from '../assets/images/logo.png';
 
@@ -11,7 +12,7 @@ function Header() {
           <img className="w-full h-[60px]" src={LOGO} alt="Logo" />
         </a>
       </div>
-      <>
+      <div className="max-lg:hidden">
         <ul className="flex items-center p-4">
           <li className="px-4">
             <div className="flex items-center justify-center gap-2">
@@ -39,7 +40,10 @@ function Header() {
           </li>
           <li className="px-4">Cart</li>
         </ul>
-      </>
+      </div>
+      <div className="max-lg:block max-lg:mr-5 hidden">
+        <CiMenuBurger />
+      </div>
     </div>
   );
 }
