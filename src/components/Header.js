@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom';
-import { FiSearch } from 'react-icons/fi';
+import { useSelector } from 'react-redux';
 import { CiMenuBurger } from 'react-icons/ci';
+import { FiSearch, FiShoppingCart } from 'react-icons/fi';
 
 import LOGO from '../assets/images/logo.png';
 
 function Header() {
+  const { cart } = useSelector((state) => state.cart);
+
   return (
     <div className="flex items-center justify-between h-[80px] shadow-lg">
       <div className="m-2 ml-10">
@@ -38,7 +41,14 @@ function Header() {
               Contact Us
             </NavLink>
           </li>
-          <li className="px-4">Cart</li>
+          <li className="px-4">
+            <div className="relative">
+              <FiShoppingCart />
+              <span className="absolute -top-3 -right-3 bg-orange-500 text-white rounded-full h-5 w-5 text-center leading-normal text-sm">
+                {cart?.length}
+              </span>
+            </div>
+          </li>
         </ul>
       </div>
       <div className="max-lg:block max-lg:mr-5 hidden">
