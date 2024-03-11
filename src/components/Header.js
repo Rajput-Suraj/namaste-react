@@ -52,7 +52,12 @@ function Header() {
         </ul>
       </div>
       <div className="max-lg:block max-lg:mr-5 hidden">
-        <CiMenuBurger />
+        <div className="relative">
+          <CiMenuBurger />
+          <span className="absolute -top-3 -right-3 bg-orange-500 text-white rounded-full h-5 w-5 text-center leading-normal text-sm">
+            {cart?.length}
+          </span>
+        </div>
       </div>
     </div>
   );
