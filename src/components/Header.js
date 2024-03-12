@@ -18,12 +18,6 @@ function Header() {
       <div className="max-lg:hidden">
         <ul className="flex items-center p-4">
           <li className="px-4">
-            <div className="flex items-center justify-center gap-2">
-              <FiSearch />
-              <span>Search</span>
-            </div>
-          </li>
-          <li className="px-4">
             <NavLink to="/" className={({ isActive }) => (isActive ? 'text-orange-500' : '')}>
               Home
             </NavLink>
