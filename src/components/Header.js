@@ -24,7 +24,7 @@ function Header() {
           </li>
           <li className="px-4">
             <NavLink to="/about" className={({ isActive }) => (isActive ? 'text-orange-500' : '')}>
-              About Us
+              About
             </NavLink>
           </li>
           <li className="px-4 sm:block hidden">
