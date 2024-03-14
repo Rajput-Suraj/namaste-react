@@ -35,7 +35,7 @@ function Header() {
               Contact Us
             </NavLink>
           </li>
-          <li className="px-4">
+          <li className="px-4 cursor-pointer">
             <div className="relative">
               <FiShoppingCart />
               <span className="absolute -top-3 -right-3 bg-orange-500 text-white rounded-full h-5 w-5 text-center leading-normal text-sm">
