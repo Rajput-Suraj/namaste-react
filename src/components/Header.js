@@ -59,20 +59,22 @@ function Header() {
       {openCartModal && (
         <div className="absolute right-5 top-12 bg-white shadow-md shadow-slate-500 p-6 m-3 rounded-sm w-96">
           {cart?.map((item) => (
-            <div key={item?.id} className="text-sm flex justify-between items-center">
+            <div key={item?.id} className="text-sm flex justify-between items-center pb-2">
               <span>{item?.name}</span>
               <span>₹ {item?.price ? item?.price / 100 : item?.defaultPrice / 100}</span>
             </div>
           ))}
           <p className="text-center text-neutral-300">
-            ---------------------------------------------------------
+            ------------------------------------------------
           </p>
           <div className="text-sm flex justify-between items-center">
             <div>
               <div className="font-semibold">Sub total</div>
               <div className="font-medium text-xs text-neutral-500">Extra charges may apply</div>
             </div>
-            <span className="font-semibold">₹ 500</span>
+            <span className="font-semibold">
+              ₹ {cart?.reduce((acc, item) => acc + item?.price / 100, 0)}
+            </span>
           </div>
           <div className="w-full text-center mt-6">
             <button className="font-semibold text-white bg-orange-500 w-full p-3">CHECKOUT</button>
