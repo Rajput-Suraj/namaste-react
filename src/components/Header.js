@@ -5,6 +5,8 @@ import { CiMenuBurger } from 'react-icons/ci';
 import { FiShoppingCart } from 'react-icons/fi';
 
 import LOGO from '../assets/images/logo.png';
+import VegIcon from '../assets/images/veg.png';
+import NonVegIcon from '../assets/images/non-veg.png';
 
 function Header() {
   const [openCartModal, setOpenCartModal] = useState(false);
@@ -60,7 +62,10 @@ function Header() {
         <div className="absolute right-5 top-12 bg-white shadow-md shadow-slate-500 p-6 m-3 rounded-sm w-96">
           {cart?.map((item) => (
             <div key={item?.id} className="text-sm flex justify-between items-center pb-2">
-              <span>{item?.name}</span>
+              <div className="flex items-center justify-start gap-3">
+                <img src={item?.isVeg ? VegIcon : NonVegIcon} className="h-5" alt="Icon" />
+                <span>{item?.name}</span>
+              </div>
               <span>₹ {item?.price ? item?.price / 100 : item?.defaultPrice / 100}</span>
             </div>
           ))}
