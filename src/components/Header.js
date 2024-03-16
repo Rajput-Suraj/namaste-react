@@ -62,7 +62,7 @@ function Header() {
         <div className="absolute right-5 top-12 bg-white shadow-md shadow-slate-500 p-6 m-3 rounded-sm w-96">
           {cart?.map((item) => (
             <div key={item?.id} className="text-sm flex justify-between items-center pb-2">
-              <div className="flex items-center justify-start gap-3">
+              <div className="flex items-center justify-start gap-2">
                 <img src={item?.isVeg ? VegIcon : NonVegIcon} className="h-5" alt="Icon" />
                 <span>{item?.name}</span>
               </div>
