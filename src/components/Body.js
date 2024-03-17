@@ -7,7 +7,7 @@ import useRestaurantsList from '../hooks/useRestaurantsList';
 
 function Body() {
   const [searchTerm, setSearchTerm] = useState('');
-  const { resList, filterList, setFilterList } = useRestaurantsList();
+  const { resList, filterList, setFilterList, errorStatus } = useRestaurantsList();
 
   const handleSearch = () => {
     if (searchTerm) {
@@ -17,6 +17,15 @@ function Body() {
       setFilterList(filteredData);
     }
   };
+
+  if (errorStatus) {
+    return (
+      <div className="flex items-center justify-center flex-col">
+        <h1 className="text-[42px] font-normal">Something went wrong</h1>
+        <h2 className="text-3xl font-normal">Try, Again later!!</h2>
+      </div>
+    );
+  }
 
   return resList.length === 0 ? (
     <>
