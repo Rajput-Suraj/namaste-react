@@ -11,7 +11,6 @@ const useRestaurantsList = () => {
 
   async function fetchData() {
     const response = await fetch(process.env.REACT_APP_BASE_URL);
-    console.log(response);
 
     if (response?.ok) {
       const data = await response.json();
