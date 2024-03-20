@@ -25,7 +25,6 @@ class User extends Component {
           Increment
         </button>
         <h2>{name}</h2>
-        <h3>johndoe@example.com</h3>
       </div>
     );
   }
