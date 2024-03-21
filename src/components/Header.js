@@ -77,7 +77,11 @@ function Header() {
               <div className="font-medium text-xs text-neutral-500">Extra charges may apply</div>
             </div>
             <span className="font-semibold">
-              ₹ {cart?.reduce((acc, item) => acc + item?.price / 100, 0)}
+              ₹{' '}
+              {cart?.reduce(
+                (acc, item) => acc + (item?.price ? item?.price / 100 : item?.defaultPrice) / 100,
+                0
+              )}
             </span>
           </div>
           <div className="w-full text-center mt-6">
