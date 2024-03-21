@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { CiMenuBurger } from 'react-icons/ci';
 import { FiShoppingCart } from 'react-icons/fi';
@@ -15,9 +15,9 @@ function Header() {
   return (
     <div className="flex items-center justify-between h-[80px] shadow-lg relative">
       <div className="m-2 ml-10">
-        <a href="/">
+        <Link to="/">
           <img className="w-full h-[60px]" src={LOGO} alt="Logo" />
-        </a>
+        </Link>
       </div>
       <div className="max-lg:hidden">
         <ul className="flex items-center p-4">
