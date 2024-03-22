@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { addToCart } from '../appData/cart';
 import { CDN_URL } from '../utils/constants';
@@ -8,6 +8,7 @@ import DownArrow from '../assets/images/down-arrow.png';
 function Category({ data, collapse, handleCollapse }) {
   const { title, itemCards } = data;
   const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state.cart);
 
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
