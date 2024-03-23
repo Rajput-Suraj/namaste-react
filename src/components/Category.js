@@ -24,7 +24,7 @@ function Category({ data, collapse, handleCollapse }) {
           <img src={DownArrow} alt="Arrow" className="w-4 font-bold" />
         </div>
         {collapse &&
-          itemCards?.map((menu) => {
+          itemCards?.map((menu, i) => {
             const { id, name, price, imageId, description, defaultPrice } = menu?.card?.info;
 
             return (
@@ -43,12 +43,11 @@ function Category({ data, collapse, handleCollapse }) {
                       src={CDN_URL + imageId}
                       alt="img"
                     />
-                    <button
-                      onClick={() => handleAddToCart(menu?.card?.info)}
-                      className="bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]"
-                    >
-                      ADD
-                    </button>
+                    <div className="flex justify-center items-center gap-2 bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]">
+                      <div>{cart?.length > 0 && id === cart[i]?.id && '-'}</div>
+                      <button onClick={() => handleAddToCart(menu?.card?.info)}>ADD</button>
+                      <div>{cart?.length > 0 && id === cart[i]?.id && '+'}</div>
+                    </div>
                   </div>
                 </div>
                 <div className="border-solid border-b-[1.5px]" />
