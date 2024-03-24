@@ -9,14 +9,9 @@ function Category({ data, collapse, handleCollapse }) {
   const dispatch = useDispatch();
 
   const { title, itemCards } = data;
-  const { cart } = useSelector((state) => state.cart);
 
   const handleAddToCart = (item) => {
-    if (cart.some((cartItem) => cartItem.id === item.id)) {
-      dispatch(addToCart({ ...item, quantity: item.quantity ? item.quantity : 0 + 1 }));
-    } else {
-      dispatch(addToCart(item));
-    }
+    dispatch(addToCart(item));
   };
 
   return (
