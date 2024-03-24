@@ -6,12 +6,17 @@ import { CDN_URL } from '../utils/constants';
 import DownArrow from '../assets/images/down-arrow.png';
 
 function Category({ data, collapse, handleCollapse }) {
-  const { title, itemCards } = data;
   const dispatch = useDispatch();
+
+  const { title, itemCards } = data;
   const { cart } = useSelector((state) => state.cart);
 
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+    if (cart.some((cartItem) => cartItem.id === item.id)) {
+      dispatch(addToCart({ ...item, quantity: item.quantity ? item.quantity : 0 + 1 }));
+    } else {
+      dispatch(addToCart(item));
+    }
   };
 
   return (
@@ -43,10 +48,8 @@ function Category({ data, collapse, handleCollapse }) {
                       src={CDN_URL + imageId}
                       alt="img"
                     />
-                    <div className="flex justify-center items-center gap-2 bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]">
-                      <div>{cart?.length > 0 && id === cart[i]?.id && '-'}</div>
+                    <div className="text-center bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]">
                       <button onClick={() => handleAddToCart(menu?.card?.info)}>ADD</button>
-                      <div>{cart?.length > 0 && id === cart[i]?.id && '+'}</div>
                     </div>
                   </div>
                 </div>

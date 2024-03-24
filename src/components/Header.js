@@ -11,7 +11,6 @@ import NonVegIcon from '../assets/images/non-veg.png';
 function Header() {
   const [openCartModal, setOpenCartModal] = useState(false);
   const { cart } = useSelector((state) => state.cart);
-
   return (
     <div className="flex items-center justify-between h-[80px] shadow-lg relative">
       <div className="m-2 ml-10">
