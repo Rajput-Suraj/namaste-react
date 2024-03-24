@@ -77,10 +77,12 @@ function Header() {
             </div>
             <span className="font-semibold">
               ₹{' '}
-              {cart?.reduce(
-                (acc, item) => acc + (item?.price ? item?.price / 100 : item?.defaultPrice) / 100,
-                0
-              )}
+              {Number(
+                cart?.reduce(
+                  (acc, item) => acc + (item?.price ? item?.price / 100 : item?.defaultPrice / 100),
+                  0
+                )
+              ).toFixed(2)}
             </span>
           </div>
           <div className="w-full text-center mt-6">
