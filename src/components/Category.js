@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiPlus, FiMinus } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addToCart } from '../appData/cart';
@@ -7,6 +8,8 @@ import DownArrow from '../assets/images/down-arrow.png';
 
 function Category({ data, collapse, handleCollapse }) {
   const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state.cart);
+  console.log(`Category`, cart);
 
   const { title, itemCards } = data;
 
@@ -44,7 +47,19 @@ function Category({ data, collapse, handleCollapse }) {
                       alt="img"
                     />
                     <div className="text-center bg-white text-sm text-green-500 font-semibold p-2 rounded-md absolute -bottom-3 right-[10px] w-[100px]">
-                      <button onClick={() => handleAddToCart(menu?.card?.info)}>ADD</button>
+                      {cart?.length > 0 && cart[i]?.id === id ? (
+                        <div className="flex justify-between items-center">
+                          <button className="text-neutral-300">
+                            <FiMinus />
+                          </button>
+                          <span>{cart?.map((item) => item?.id === id && item?.quantity)}</span>
+                          <button>
+                            <FiPlus />
+                          </button>
+                        </div>
+                      ) : (
+                        <button onClick={() => handleAddToCart(menu?.card?.info)}>ADD</button>
+                      )}
                     </div>
                   </div>
                 </div>
