@@ -63,8 +63,13 @@ function Header() {
               <div className="flex items-center justify-start gap-2">
                 <img src={item?.isVeg ? VegIcon : NonVegIcon} className="h-5" alt="Icon" />
                 <span>{item?.name}</span>
+                <div>
+                  x <span className="font-medium">{item?.quantity}</span>
+                </div>
               </div>
-              <span>₹ {item?.price ? item?.price / 100 : item?.defaultPrice / 100}</span>
+              <span>
+                ₹ {item?.price ? item?.price / 100 : (item?.defaultPrice / 100) * item?.quantity}
+              </span>
             </div>
           ))}
           <p className="text-center text-neutral-300">
@@ -79,7 +84,9 @@ function Header() {
               ₹{' '}
               {Number(
                 cart?.reduce(
-                  (acc, item) => acc + (item?.price ? item?.price / 100 : item?.defaultPrice / 100),
+                  (acc, item) =>
+                    acc +
+                    (item?.price ? item?.price / 100 : item?.defaultPrice / 100) * item?.quantity,
                   0
                 )
               ).toFixed(2)}
