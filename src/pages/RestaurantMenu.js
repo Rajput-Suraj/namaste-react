@@ -14,10 +14,10 @@ function RestaurantMenu() {
   let restaurantData = {};
 
   if (restaurantDetails.length > 0) {
-    restaurantData = restaurantDetails[0]?.card?.card?.info;
+    restaurantData = restaurantDetails[2]?.card?.card?.info;
   }
 
-  const CARDS = restaurantDetails[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  const CARDS = restaurantDetails[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
   const filteredCards = CARDS?.filter(
     (card) =>
