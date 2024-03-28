@@ -11,6 +11,8 @@ import NonVegIcon from '../assets/images/non-veg.png';
 function Header() {
   const [openCartModal, setOpenCartModal] = useState(false);
   const { cart } = useSelector((state) => state.cart);
+
+  const cartItems = cart?.reduce((acc, item) => acc + item?.quantity, 0);
   return (
     <div className="flex items-center justify-between h-[80px] shadow-lg relative">
       <div className="m-2 ml-10">
@@ -42,7 +44,7 @@ function Header() {
             <div className="relative">
               <FiShoppingCart />
               <span className="absolute -top-3 -right-3 bg-orange-500 text-white rounded-full h-5 w-5 text-center leading-normal text-sm">
-                {cart?.length}
+                {cartItems}
               </span>
             </div>
           </li>
@@ -52,7 +54,7 @@ function Header() {
         <div className="relative">
           <CiMenuBurger />
           <span className="absolute -top-3 -right-3 bg-orange-500 text-white rounded-full h-5 w-5 text-center leading-normal text-sm">
-            {cart?.length}
+            {cartItems}
           </span>
         </div>
       </div>
