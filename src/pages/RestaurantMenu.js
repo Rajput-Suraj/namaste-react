@@ -29,7 +29,7 @@ function RestaurantMenu() {
   }
 
   return (
-    <div className="sm:mx-56 mx-5 my-4">
+    <div className="md:mx-20 mx-5 my-4">
       <div className="details">
         <div className="flex justify-between items-start">
           <div>
