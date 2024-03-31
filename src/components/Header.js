@@ -97,7 +97,13 @@ function Header() {
             </span>
           </div>
           <div className="w-full text-center mt-6">
-            <button className="font-semibold text-white bg-orange-500 w-full p-3">CHECKOUT</button>
+            <button
+              className={`font-semibold text-white w-full p-3 ${
+                cart?.length > 0 ? 'bg-orange-500' : 'bg-slate-500'
+              }`}
+            >
+              CHECKOUT
+            </button>
           </div>
         </div>
       )}
