@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 function Cart() {
   const { cart } = useSelector((state) => state.cart);
-  return <div>Cart</div>;
+  return <div className="container mx-auto mb-10">Cart</div>;
 }
 
 export default Cart;
