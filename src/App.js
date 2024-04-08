@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import Cart from './pages/Cart';
 import About from './pages/About';
 import Error from './pages/Error';
 import Body from './components/Body';
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/restaurant-menu/:id',
         element: <RestaurantMenu />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,
