@@ -80,10 +80,10 @@ function Header() {
             ------------------------------------------------
           </p>
           <div className="text-sm flex justify-between items-center">
-            <div>
+            <>
               <div className="font-semibold">Sub total</div>
               <div className="font-medium text-xs text-neutral-500">Extra charges may apply</div>
-            </div>
+            </>
             <span className="font-semibold">
               ₹{' '}
               {Number(
