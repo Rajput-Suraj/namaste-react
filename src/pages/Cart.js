@@ -24,6 +24,23 @@ function Cart() {
             </span>
           </div>
         ))}
+        <div className="text-sm flex justify-between items-center">
+          <div>
+            <div className="font-semibold">Sub total</div>
+            <div className="font-medium text-xs text-neutral-500">Extra charges may apply</div>
+          </div>
+          <span className="font-semibold">
+            ₹{' '}
+            {Number(
+              cart?.reduce(
+                (acc, item) =>
+                  acc +
+                  (item?.price ? item?.price / 100 : item?.defaultPrice / 100) * item?.quantity,
+                0
+              )
+            ).toFixed(2)}
+          </span>
+        </div>
       </div>
     </div>
   );
