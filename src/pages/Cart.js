@@ -8,8 +8,9 @@ function Cart() {
   const { cart } = useSelector((state) => state.cart);
   console.log(cart);
   return (
-    <div className="flex justify-end">
-      <div className="m-3 p-3 bg-slate-200 w-2/4">
+    <div className="flex justify-between">
+      <div className="m-3 p-3 bg-slate-200 w-3/4"></div>
+      <div className="m-3 p-3 bg-slate-200 w-2/6">
         {cart?.map((item) => (
           <div key={item?.id} className="text-sm flex justify-between items-center pb-2">
             <div className="flex items-center justify-start gap-2">
