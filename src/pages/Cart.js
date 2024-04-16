@@ -9,7 +9,12 @@ function Cart() {
   console.log(cart);
   return (
     <div className="flex justify-between">
-      <div className="m-3 p-3 bg-slate-200 w-3/4"></div>
+      <div className="m-3 p-3 bg-slate-200 w-3/4">
+        <div>
+          <h3>Account</h3>
+          <p>To place your order now, log in to your existing account or sign up.</p>
+        </div>
+      </div>
       <div className="m-3 p-3 bg-slate-200 w-2/6">
         {cart?.map((item) => (
           <div key={item?.id} className="text-sm flex justify-between items-center pb-2">
