@@ -6,7 +6,6 @@ import NonVegIcon from '../assets/images/non-veg.png';
 
 function Cart() {
   const { cart } = useSelector((state) => state.cart);
-  console.log(cart);
   return (
     <div className="flex justify-between">
       <div className="m-3 p-3 bg-slate-200 w-3/4">
