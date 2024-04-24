@@ -1,6 +1,7 @@
 1.  What is JSX?
     JSX is a HTML like syntactical sugar created by facebook engineers to run inside javascript. 
-    Earlier to create react element inside our react app, We need write the api React.createElement provided by react and it makes our code messy and non maintainable. To overcome this, this has been created. 
+    Earlier to create react element inside our react app, We need write the api React.createElement provided by react and it makes our code messy and non maintainable. To overcome this, this has been created.
+
     It ultimately returns React.createElement internally using Abstract Syntax Tree. To use this we need babel which is responsible for transpiling the JSX code into React code.
 
 2.  Superpowers of JSX
