@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import Shimmer from './Shimmer';
 import RestaurantCard from './RestaurantCard';
-import useRestaurantsList from '../hooks/useRestaurantsList';
 import MaintainanceIcon from '../assets/images/maintainance.png';
+import useRestaurantsList from '../hooks/useRestaurantsList';
 
 function Body() {
   const [searchTerm, setSearchTerm] = useState('');
