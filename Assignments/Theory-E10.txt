@@ -1,7 +1,7 @@
 1.  Explore all the ways of writing css.
     - There are differernt ways of ussing CSS.
 
-      Writing normal Nativice CSS : By creating .css files and adding them to our html files
+      Writing normal Nativice CSS : By creating css files and adding them to our html files
       By using css preprocessors like sass or scss.
       By writing inline CSS : writing csss inside the components itself.
       Using Librraries like Chakra UI, Tailwind CSS etc.
