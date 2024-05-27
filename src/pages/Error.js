@@ -4,7 +4,7 @@ function Error() {
   const err = useRouteError();
   return (
     <>
-      <h1>Error Page</h1>
+      <h1>Error</h1>
       <h2>
         {err.status} {err.statusText}
       </h2>
