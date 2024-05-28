@@ -1,5 +1,5 @@
 1.  When and why do we need lazy()?
-    - It allows you to load parts of your application on-demand to reduce the initial load time. For example, you can initially load 
+    - It allows you to load parts of your application on demand to reduce the initial load time. For example, you can initially load 
         the components and modules related to user login and registration. Then, you can load the rest of the components based on 
         user navigation.
 
@@ -8,8 +8,8 @@
       (like a spinner) while we’re waiting.
 
 3.  Advantages and disadvantages of using this code splitting pattern?
-    - Advantage: Code splitting is one of the most compelling features of webpack. This feature allows you to split your code into various bundles which can then be loaded on demand or in parallel. It can be used to achieve smaller bundles and control resource load prioritization which, if used correctly, can have a major impact on load time.
-    - Disadvantage: The only drawback about code splitting is that you can only use it in client side rendering.
+    - Advantage:Code splitting is one of the most compelling features of webpack. This feature allows you to split your code into various bundles which can then be loaded on demand or in parallel. It can be used to achieve smaller bundles and control resource load prioritization which, if used correctly, can have a major impact on load time.
+    - Disadvantage:The only drawback about code splitting is that you can only use it in client side rendering.
 
 4.  When do we and why do we need suspense?
     - Suspense is the first feature released by the Facebook React team that takes advantage of the new concurrent rendering engine 

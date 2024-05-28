@@ -14,7 +14,7 @@ class User extends Component {
 
     return (
       <div>
-        <h2>Count: {count}</h2>
+        <h2>Count:{count}</h2>
         <button
           onClick={() => {
             this.setState({

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import Shimmer from './Shimmer';
 import RestaurantCard from './RestaurantCard';
-import useRestaurantsList from '../hooks/useRestaurantsList';
 import MaintainanceIcon from '../assets/images/maintainance.png';
+import useRestaurantsList from '../hooks/useRestaurantsList';
 
 function Body() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,7 +24,7 @@ function Body() {
       <div className="flex items-center justify-center flex-col">
         <h1 className="text-[42px] font-normal">Something went wrong</h1>
         <h2 className="text-3xl font-normal">Try, Again later!!</h2>
-        <img src={MaintainanceIcon} alt="MaintainanceIcon" style={{ height: '350px' }} />
+        <img src={MaintainanceIcon} alt="Maintainance-Icon" style={{ height: '350px' }} />
       </div>
     );
   }
