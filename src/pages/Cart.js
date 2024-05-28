@@ -12,7 +12,7 @@ function Cart() {
       <div className="m-3 p-3 bg-slate-200 w-3/4">
         <div>
           <h3>Account</h3>
-          <p>To place your order now, log in to your existing account or sign up.</p>
+          <p>To place your order now, log in to your existing account or sign up</p>
         </div>
       </div>
       <div className="m-3 p-3 bg-slate-200 w-2/6">
