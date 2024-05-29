@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { CDN_URL } from '../utils/constants';
 import { addToCart, incrementQuantity, decrementQuantity } from '../appData/cart';
+
 import DownArrow from '../assets/images/down-arrow.png';
 
 function Category({ data, collapse, handleCollapse }) {
