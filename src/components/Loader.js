@@ -6,7 +6,7 @@ function Loader() {
     <div className="padding-container h-screen flex items-center justify-center">
       <Oval
         visible={true}
-        height="80"
+        height="100"
         width="80"
         color="#f97516"
         secondaryColor="#f97516"
