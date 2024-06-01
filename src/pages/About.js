@@ -6,7 +6,7 @@ class About extends Component {
 
   render() {
     return (
-      <div className="mx-[40px]">
+      <div className="mx-[50px]">
         <h1>About Page</h1>
       </div>
     );
