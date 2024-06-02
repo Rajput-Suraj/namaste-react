@@ -17,7 +17,7 @@ function AppLayout() {
   return (
     <Provider store={store}>
       <Header />
-      <div className="py-8">
+      <div className="py-10">
         <Outlet />
       </div>
     </Provider>
